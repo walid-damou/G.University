@@ -167,7 +167,7 @@ public class affiche_etablissement extends javax.swing.JFrame {
             rs=stmt.executeQuery(sql);
             while(rs.next()){
                 String IMG = rs.getString("PHOTO_ESTA");
-                localimage.setIcon(new ImageIcon("C:\\Users\\walid\\OneDrive\\Bureau\\EST\\S3\\Modélisation et POO JAVA\\Projet\\Gestion_University\\src\\media\\"+IMG));
+                localimage.setIcon(new ImageIcon("C:\\Users\\walid\\OneDrive\\Bureau\\EST\\S3\\Modélisation et POO JAVA\\G.University\\Projet\\Gestion_University\\src\\media\\"+IMG));
                 textarea.setText(rs.getString("ABRE_ESTA")+"\n"+rs.getString("NOM_ESTA")+"\n\nADRESSE:   "+rs.getString("ADRESSE_ESTA")
                 +"\nTELE:   "+rs.getString("TELE_ESTA")+"\nEMAIL:   "+rs.getString("EMAIL_ESTA")+"\n\nLINK:   "+rs.getString("LINK_ESTA")+"\n\nFilière : "+rs.getString("ABRE_FILIERE")+"("+rs.getString("NOM_FILIERE")+")"
                 +"\nProfesseur : "+rs.getString("NOM_PROF")+" "+rs.getString("PRENOM_PROF"));

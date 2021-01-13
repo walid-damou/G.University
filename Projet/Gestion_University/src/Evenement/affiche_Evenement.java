@@ -152,7 +152,7 @@ public class affiche_Evenement extends javax.swing.JFrame {
                 //Icon icon;
                 String IMG = rs.getString("PHOTO_EVE");
                 System.out.println(IMG);
-                imgEv.setIcon(new ImageIcon("C:\\Users\\walid\\OneDrive\\Bureau\\EST\\S3\\Modélisation et POO JAVA\\Projet\\Gestion_University\\src\\media\\"+IMG));
+                imgEv.setIcon(new ImageIcon("C:\\Users\\walid\\OneDrive\\Bureau\\EST\\S3\\Modélisation et POO JAVA\\G.University\\Projet\\Gestion_University\\src\\media\\"+IMG));
                 
             }
             rs.close();

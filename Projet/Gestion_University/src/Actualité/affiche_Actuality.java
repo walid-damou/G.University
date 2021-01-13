@@ -158,7 +158,7 @@ public class affiche_Actuality extends javax.swing.JFrame {
                         rs.getString("TEXT_ACTU") +"\n\n"+"Link :  "+rs.getString("LINK_ACTU"));
                 //Icon icon;
                 String IMG = rs.getString("PHOTO_ACTU");
-                imgActu.setIcon(new ImageIcon("C:\\Users\\walid\\OneDrive\\Bureau\\EST\\S3\\Modélisation et POO JAVA\\Projet\\Gestion_University\\src\\media\\"+IMG));
+                imgActu.setIcon(new ImageIcon("C:\\Users\\walid\\OneDrive\\Bureau\\EST\\S3\\Modélisation et POO JAVA\\G.University\\Projet\\Gestion_University\\src\\media\\"+IMG));
 
                 }
                 rs.close();
