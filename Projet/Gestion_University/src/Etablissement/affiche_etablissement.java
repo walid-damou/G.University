@@ -5,10 +5,10 @@
  */
 package Etablissement;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.awt.Color;
 import java.sql.SQLException;
 import javax.swing.Icon;

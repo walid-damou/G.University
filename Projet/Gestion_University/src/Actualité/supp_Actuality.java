@@ -5,14 +5,15 @@
  */
 package Actualité;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -173,6 +174,10 @@ public class supp_Actuality extends javax.swing.JFrame {
         try{
             PreparedStatement ps = conn.prepareStatement("DELETE FROM actuality WHERE TITRE_ACTU = '"+ActuTitreS+"'"); 
             ps.executeUpdate();
+            JOptionPane dialogue = new JOptionPane("L'actualité est bien supprimer", JOptionPane.INFORMATION_MESSAGE);
+            JDialog boîte = dialogue.createDialog("Message");
+            boîte.setVisible(true);
+            titreActuS.setText("");
             this.setVisible(false);
             new supp_Actuality().setVisible(true);
         }catch(SQLException exp){

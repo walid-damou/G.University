@@ -5,14 +5,15 @@
  */
 package Etablissement;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.sql.ResultSet;
 
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -236,7 +237,7 @@ public class modifier_Filière_prof extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(220, 270, 140, 30);
+        jButton1.setBounds(210, 270, 150, 30);
 
         jButton2.setBackground(new java.awt.Color(189, 255, 207));
         jButton2.setText("Modifier Professeur");
@@ -246,7 +247,7 @@ public class modifier_Filière_prof extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(220, 430, 140, 30);
+        jButton2.setBounds(210, 430, 150, 30);
 
         jButton3.setBackground(new java.awt.Color(255, 204, 204));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -379,6 +380,11 @@ public class modifier_Filière_prof extends javax.swing.JFrame {
             if(abfil.length()!=0 && nomfil.length()!=0){
                 String q="UPDATE filiere SET ABRE_FILIERE='"+abfil+"',NOM_FILIERE='"+nomfil+"'WHERE ABRE_FILIERE='"+abre_f+"'AND NOM_FILIERE='"+nom_f+"'";
                 stmt.executeUpdate(q);
+                JOptionPane dialogue = new JOptionPane("La filière est bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                abre_fil.setText("");
+                nom_fil.setText("");
                 this.setVisible(false);
                 new modifier_Filière_prof().setVisible(true);
             }
@@ -416,6 +422,13 @@ public class modifier_Filière_prof extends javax.swing.JFrame {
             if(nom_p.length()!=0 && prenom_p.length()!=0 && email_p.length()!=0){
                 String q="UPDATE professeur SET NOM_PROF='"+nom_p+"',PRENOM_PROF='"+prenom_p+"',EMAIL_PROF='"+email_p+"' WHERE NOM_PROF='"+nom_pr+"'AND PRENOM_PROF='"+prenom_pr+"'AND EMAIL_PROF='"+email_pr+"'";
                 stmt.executeUpdate(q);
+                JOptionPane dialogue = new JOptionPane("Le professeur est bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                nom_prof.setText("");
+                prenom_prof.setText("");
+                email_prof.setText("");
+                
             }
             stmt.close();
             conn.close();

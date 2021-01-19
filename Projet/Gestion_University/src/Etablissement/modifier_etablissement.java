@@ -6,11 +6,12 @@
 package Etablissement;
 
 import Etablissement.affiche_etablissement;
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -291,6 +292,15 @@ public class modifier_etablissement extends javax.swing.JFrame {
             if(abr.length()!=0 && nomm.length()!=0 && adr.length()!=0 && tel.length()!=0 && emai.length()!=0 && lin.length()!=0){
                 String q="UPDATE establishment SET ABRE_ESTA='"+abr+"',NOM_ESTA='"+nomm+"',ADRESSE_ESTA='"+adr+"',TELE_ESTA='"+tel+"',EMAIL_ESTA='"+emai+"',LINK_ESTA='"+lin+"' WHERE ID_ESTA="+r;
                 stmt.executeUpdate(q);
+                JOptionPane dialogue = new JOptionPane("Bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                nom.setText("");
+                abre.setText("");
+                adresse.setText("");
+                tele.setText("");
+                email.setText("");
+                link.setText("");
             }
             this.setVisible(false);
             new modifier_etablissement().setVisible(true);

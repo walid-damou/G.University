@@ -5,12 +5,13 @@
  */
 package Actualité;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -137,6 +138,7 @@ public class ajoutActuality extends javax.swing.JFrame {
         dateDActuA.setBounds(330, 100, 360, 30);
 
         descreptionActuA.setColumns(20);
+        descreptionActuA.setLineWrap(true);
         descreptionActuA.setRows(5);
         jScrollPane1.setViewportView(descreptionActuA);
 
@@ -195,8 +197,14 @@ public class ajoutActuality extends javax.swing.JFrame {
                 + "'"+dateDebut+"', '"+dateFin+"', '"+heurDebut+"', '"+descreptionActuality+"', '"+Link+"', "
                 + "'"+imgActuality+"')";
                 stmt.executeUpdate(query);
-                System.out.println(query);
-                
+                JOptionPane dialogue = new JOptionPane("Bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                titreActuA.setText("");
+                heurDActuA.setText("");
+                lien.setText("");
+                imgActuA.setText("");
+                descreptionActuA.setText("");
             }
 
         } catch (SQLException e) {

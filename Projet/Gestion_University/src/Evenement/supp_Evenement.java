@@ -5,14 +5,15 @@
  */
 package Evenement;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -181,6 +182,10 @@ public class supp_Evenement extends javax.swing.JFrame {
         try{
             PreparedStatement ps = conn.prepareStatement("DELETE FROM event WHERE TITRE_EVE = '"+EvTitreS+"'"); 
             ps.executeUpdate();
+            JOptionPane dialogue = new JOptionPane("L'EVENEMENT est bien supprimer", JOptionPane.INFORMATION_MESSAGE);
+            JDialog boîte = dialogue.createDialog("Message");
+            boîte.setVisible(true);
+            titreEvS.setText("");
             this.setVisible(false);
             new supp_Evenement().setVisible(true);
         }catch(SQLException exp){

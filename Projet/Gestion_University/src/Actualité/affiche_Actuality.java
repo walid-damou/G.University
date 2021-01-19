@@ -5,10 +5,10 @@
  */
 package Actualité;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -72,10 +72,10 @@ public class affiche_Actuality extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableActu = new javax.swing.JTable();
         imgActu = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descActu = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        descActu = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,13 +104,6 @@ public class affiche_Actuality extends javax.swing.JFrame {
         getContentPane().add(imgActu);
         imgActu.setBounds(330, 60, 440, 120);
 
-        descActu.setBackground(new java.awt.Color(204, 204, 204));
-        descActu.setToolTipText("");
-        jScrollPane2.setViewportView(descActu);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(140, 200, 440, 200);
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -129,9 +122,16 @@ public class affiche_Actuality extends javax.swing.JFrame {
         getContentPane().add(jButton4);
         jButton4.setBounds(660, 410, 110, 40);
 
+        descActu.setColumns(20);
+        descActu.setRows(5);
+        jScrollPane3.setViewportView(descActu);
+
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(160, 200, 440, 200);
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/actu.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 780, 460);
+        jLabel2.setBounds(0, 0, 800, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -216,13 +216,13 @@ public class affiche_Actuality extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextPane descActu;
+    private javax.swing.JTextArea descActu;
     private javax.swing.JLabel imgActu;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tableActu;
     // End of variables declaration//GEN-END:variables
 }

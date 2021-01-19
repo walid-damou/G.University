@@ -5,10 +5,11 @@
  */
 package Etablissement;
 
-import gestion_university.JDBC;
-import gestion_university.affiche_messages;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import Messages.affiche_messages;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 /**
@@ -213,6 +214,16 @@ public class Ajouter_etablissement extends javax.swing.JFrame {
             if(ab.length()!=0 && nom.length()!=0 && ad.length()!=0 && tele.length()!=0 && email.length()!=0 && link.length()!=0 && img.length()!=0){
                 String q="INSERT INTO establishment VALUES ("+id+",'"+ab+"',upper('"+nom+"'),'"+ad+"','"+tele+"','"+email+"','"+link+"','"+img+".png')";
                 stmt.executeUpdate(q);
+                JOptionPane dialogue = new JOptionPane("Bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                abre_eta.setText("");
+                nom_eta.setText("");
+                adresse_eta.setText("");
+                tele_eta.setText("");
+                email_eta.setText("");
+                link_eta.setText("");
+                photo_eta.setText("");
             }
         }catch(Exception exp){
             System.out.println("ErreurT"+exp);

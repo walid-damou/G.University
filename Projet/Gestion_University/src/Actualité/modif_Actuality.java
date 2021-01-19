@@ -5,13 +5,14 @@
  */
 package Actualité;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -108,6 +109,7 @@ public class modif_Actuality extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableActuM = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -116,8 +118,6 @@ public class modif_Actuality extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descrActuM = new javax.swing.JTextPane();
         titreActuM = new javax.swing.JTextField();
         dateD = new javax.swing.JTextField();
         dateF = new javax.swing.JTextField();
@@ -126,7 +126,11 @@ public class modif_Actuality extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        descrActuM = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/actu.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -184,13 +188,7 @@ public class modif_Actuality extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 102));
         jLabel6.setText("Descreption d'évenement :");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(370, 70, 190, 30);
-
-        descrActuM.setToolTipText("");
-        jScrollPane2.setViewportView(descrActuM);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(370, 100, 380, 90);
+        jLabel6.setBounds(370, 40, 190, 30);
         getContentPane().add(titreActuM);
         titreActuM.setBounds(540, 200, 210, 30);
         getContentPane().add(dateD);
@@ -229,11 +227,19 @@ public class modif_Actuality extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Modifier actualité");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(250, 0, 280, 40);
+        jLabel7.setBounds(260, 0, 280, 40);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/actu.png"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, 0, 780, 460);
+        descrActuM.setColumns(20);
+        descrActuM.setLineWrap(true);
+        descrActuM.setRows(5);
+        jScrollPane3.setViewportView(descrActuM);
+
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(370, 70, 380, 120);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/actu.png"))); // NOI18N
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(0, 0, 780, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -270,8 +276,17 @@ public class modif_Actuality extends javax.swing.JFrame {
                 + "DATE_J_F_ACTU = TO_DATE('"+EvDateFin+"', 'YYYY-MM-DD'),"
                 + "HEURE_F_ACTU = '"+EvHeurDib+"', LINK_ACTU = '"+Link+"', "
                 + "TEXT_ACTU = '"+EvDescreption+"' WHERE ID_ACTU = "+ID;
-                System.out.println(sq);
                 stmt.executeUpdate(sq);
+                
+                JOptionPane dialogue = new JOptionPane("Bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                descrActuM.setText("");
+                titreActuM.setText("");
+                dateD.setText("");
+                dateF.setText("");
+                heurD.setText("");
+                link.setText("");
                 this.setVisible(false);
                 new modif_Actuality().setVisible(true);
 
@@ -340,7 +355,7 @@ public class modif_Actuality extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField dateD;
     private javax.swing.JTextField dateF;
-    private javax.swing.JTextPane descrActuM;
+    private javax.swing.JTextArea descrActuM;
     private javax.swing.JTextField heurD;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
@@ -352,8 +367,9 @@ public class modif_Actuality extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField link;
     private javax.swing.JTable tableActuM;
     private javax.swing.JTextField titreActuM;

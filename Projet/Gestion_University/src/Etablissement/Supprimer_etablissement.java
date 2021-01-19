@@ -5,9 +5,11 @@
  */
 package Etablissement;
 
-import gestion_university.*;
-import static gestion_university.JDBC.*;
+import Main.JDBC;
+import static Main.JDBC.*;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -281,10 +283,33 @@ public class Supprimer_etablissement extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JDBC db=new JDBC();
         db.connection();
+        int id=-1000;
         try {
             if(abrev.length()!=0 && nometa.length() != 0){
+                String sq="SELECT ID_ESTA FROM establishment WHERE ABRE_ESTA='"+abrev+"' AND NOM_ESTA='"+nometa+"'";
+                rs=stmt.executeQuery(sq);
+                while(rs.next()){
+                   id=Integer.parseInt(rs.getString("ID_ESTA"));
+                }
+                
+                rs=null;
+                String sqq="DELETE FROM professeur WHERE ID_ESTA="+id;
+                stmt.executeUpdate(sqq);
+                stmt.executeUpdate("commit");
+                
                 String sql="DELETE FROM establishment WHERE ABRE_ESTA='"+abrev+"' AND NOM_ESTA='"+nometa+"'";
+                System.out.println(sql);
                 stmt.executeUpdate(sql);
+                
+                JOptionPane dialogue = new JOptionPane("L'Etablissement est bien supprimer", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                abre.setText("");
+                nom.setText("");
+                adresse.setText("");
+                tele.setText("");
+                email.setText("");
+                link.setText("");
             }
             this.setVisible(false);
             new Supprimer_etablissement().setVisible(true);

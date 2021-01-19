@@ -5,8 +5,8 @@
  */
 package Evenement;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.*;
+import Main.JDBC;
+import static Main.JDBC.*;
 
 import java.sql.SQLException;
 import javax.swing.Icon;
@@ -61,14 +61,17 @@ public class affiche_Evenement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableEvent = new javax.swing.JTable();
         imgEv = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descEv = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        descEv = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/event.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -96,13 +99,6 @@ public class affiche_Evenement extends javax.swing.JFrame {
         getContentPane().add(imgEv);
         imgEv.setBounds(330, 60, 450, 150);
 
-        descEv.setBackground(new java.awt.Color(204, 204, 204));
-        descEv.setToolTipText("");
-        jScrollPane2.setViewportView(descEv);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(160, 230, 450, 180);
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -121,9 +117,17 @@ public class affiche_Evenement extends javax.swing.JFrame {
         getContentPane().add(jButton4);
         jButton4.setBounds(670, 410, 110, 40);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/event.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 800, 500);
+        descEv.setColumns(20);
+        descEv.setLineWrap(true);
+        descEv.setRows(5);
+        jScrollPane4.setViewportView(descEv);
+
+        getContentPane().add(jScrollPane4);
+        jScrollPane4.setBounds(160, 250, 450, 180);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/event.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 800, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -210,13 +214,14 @@ public class affiche_Evenement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextPane descEv;
+    private javax.swing.JTextArea descEv;
     private javax.swing.JLabel imgEv;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable tableEvent;
     // End of variables declaration//GEN-END:variables
 }

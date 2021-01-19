@@ -17,7 +17,7 @@ VALUES(1,
 '16-Dec-2020', 
 '31-Dec-2020', 
 '18h',
-'La 6èmeédition du programme de Bourses IMMANA permettra aux leaders émergents de la recherche en Agriculture, Nutrition et Santé » de parfaire leurs cursus.L''équipe du bourses IMMANA a organisé deux webinaires d''information pour l''appel à candidatures de la sixième série de bourses IMMANA.',
+'La 6èmeédition du programme de Bourses IMMANA permettra aux leaders émergents de la recherche en Agriculture, Nutrition et Santé » de parfaire leurs cursus.L équipe du bourses IMMANA a organisé deux webinaires d information pour l appel à candidatures de la sixième série de bourses IMMANA.',
 'https://bit.ly/IMMANASubmit', 
 'bource_6.png');
 
@@ -25,11 +25,11 @@ VALUES(1,
 
 INSERT INTO actuality (ID_ACTU, TITRE_ACTU, DATE_J_D_ACTU, DATE_J_F_ACTU, HEURE_F_ACTU, TEXT_ACTU, LINK_ACTU, PHOTO_ACTU)
 VALUES (2, 
-'APPEL À CANDIDATURE POUR OPPORTUNITÉS DE FINANCEMENT PAR LE BIAIS DU FONDS D''ACTION (BIOPAMA)',
+'APPEL À CANDIDATURE POUR OPPORTUNITÉS DE FINANCEMENT PAR LE BIAIS DU FONDS D ACTION (BIOPAMA)',
 '10-Jan-2020', 
 '28-Jan-2020', 
 '12h',
-'Les subventions de réponse rapide du Fonds d''action BIOPAMA sont conçues pour répondre aux risques et aux difficultés induits par la crise du COVID-19 dans les pays d''Afrique, des Caraïbes et du Pacifique
+'Les subventions de réponse rapide du Fonds d action BIOPAMA sont conçues pour répondre aux risques et aux difficultés induits par la crise du COVID-19 dans les pays d Afrique, des Caraïbes et du Pacifique
 Les subventions de réponse rapide visent à accroître la résilience des aires protégées et les moyens de subsistance des communautés locales face aux risques et aux difficultés de la pandémie mondiale de COVID-19.',
 'https://action.biopama.org/ ', 
 'biopama.png');
@@ -42,7 +42,7 @@ values (3,
 '15-Dec-2020', 
 '15-Apr-2021', 
 '17h',
-'Les inscriptions à la 5ème édition du Concours « Mediterranean Water Heroes Contest », sur la valorisation de l''eau, sont lancée jusqu''au 10 janvier 2021, afin que de nombreux jeunes aient la chance de présenter leurs travaux innovants sur l''eau.',
+'Les inscriptions à la 5ème édition du Concours « Mediterranean Water Heroes Contest », sur la valorisation de l eau, sont lancée jusqu au 10 janvier 2021, afin que de nombreux jeunes aient la chance de présenter leurs travaux innovants sur l eau.',
 'https://bit.ly/2JXrgQC ', 
 'mediterranean_water.png');
 
@@ -62,12 +62,12 @@ CREATE TABLE event(
 
 INSERT INTO event (ID_EVE, TITRE_EVE, DATE_J_D_EVE, DATE_J_F_EVE, HEURE_D_EVE, HEURE_F_EVE, TEXT_EVE, PHOTO_EVE)
 VALUES(1,
-'WEBINAIRE COLLABORATION R-D ET INNOVATION ENTRE L''ESPAGNE ET LE MAROC DANS L''ENERGIE SECTEUR : PRÉSENTATION DU 3ÈME APPEL INNO ESPAMAROC ENERGY',
+'WEBINAIRE COLLABORATION R-D ET INNOVATION ENTRE L ESPAGNE ET LE MAROC DANS L ENERGIE SECTEUR : PRÉSENTATION DU 3ÈME APPEL INNO ESPAMAROC ENERGY',
 '10-Feb-2020', 
 '20-Feb-2021', 
 '10h',
 '12h',
-'L''Institut de Recherche pour l''Energie Solaire et les Nouvelles Energies (IRESEN) du Maroc et le CDTI, Agence d''Innovation du Ministère des Sciences et de l''Innovation d''Espagne, ont le plaisir de vous inviter au webinaire',
+'L Institut de Recherche pour l Energie Solaire et les Nouvelles Energies (IRESEN) du Maroc et le CDTI, Agence d Innovation du Ministère des Sciences et de l Innovation d Espagne, ont le plaisir de vous inviter au webinaire',
 'webinaire.png');
 
 INSERT INTO event (ID_EVE, TITRE_EVE, DATE_J_D_EVE, DATE_J_F_EVE, HEURE_D_EVE, HEURE_F_EVE, TEXT_EVE, PHOTO_EVE)
@@ -82,12 +82,12 @@ VALUES(2,
 
 INSERT INTO event (ID_EVE, TITRE_EVE, DATE_J_D_EVE, DATE_J_F_EVE, HEURE_D_EVE, HEURE_F_EVE, TEXT_EVE, PHOTO_EVE)
 VALUES(3,
-'ENSEIGNEMENT INCLUSIF ET RESPONSABILITÉ SOCIALE À L''UCA DANS LE CONTEXTE DE LA PANDÉMIE COVID 19',
+'ENSEIGNEMENT INCLUSIF ET RESPONSABILITÉ SOCIALE À L UCA DANS LE CONTEXTE DE LA PANDÉMIE COVID 19',
 '21-May-2020', 
 '22-May-2021', 
 '16h',
 '23h',
-'LE CENTRE DE L''ENSEIGNEMENT INCLUSIF ET DE LA RESPONSABILITÉ SOCIALE DE L''UCA (CEIRS/UCA) ORGANISE UNE TABLE RONDE À DISTANCE SOUS LE THÈME : << ENSEIGNEMENT INCLUSIF ET RESPONSABILITÉ SOCIALE À L''UCA DANS LE CONTEXTE DE LA PANDÉMIE COVID 19 >>.',
+'LE CENTRE DE L ENSEIGNEMENT INCLUSIF ET DE LA RESPONSABILITÉ SOCIALE DE L UCA (CEIRS/UCA) ORGANISE UNE TABLE RONDE À DISTANCE SOUS LE THÈME : << ENSEIGNEMENT INCLUSIF ET RESPONSABILITÉ SOCIALE À L UCA DANS LE CONTEXTE DE LA PANDÉMIE COVID 19 >>.',
 'covid19.png');
     
 /----------------------------   LA TABLE ESTABLISHMENT   --------------------------------/
@@ -137,7 +137,7 @@ INSERT INTO establishment (ID_ESTA,ABRE_ESTA,NOM_ESTA,ADRESSE_ESTA,TELE_ESTA,EMA
 VALUES(11 , 'EST-SAFI' , 'Ecole Supérieure de Technologie Safi' , 'Route Dar Si Aïssa, B.P. 89, 46000 SAFI' , '+212 5 24 62 50 53' , ' contact.ests@uca.ma' , 'https://www.uca.ma/site/ests' , 'ests.png');
 
 INSERT INTO establishment (ID_ESTA,ABRE_ESTA,NOM_ESTA,ADRESSE_ESTA,TELE_ESTA,EMAIL_ESTA,LINK_ESTA,PHOTO_ESTA)
-VALUES(12 , 'ESTE' , 'École Supérieure de Technologie, Essaouira' , 'Km 9, Route d''Agadir, Essaouira Aljadida BP. 383, Essaouira. Maroc' , '+212 5 24 79 20 64' , ' este@uca.ac.ma ' , 'https://www.uca.ma/site/este' , 'este.png');
+VALUES(12 , 'ESTE' , 'École Supérieure de Technologie, Essaouira' , 'Km 9, Route d Agadir, Essaouira Aljadida BP. 383, Essaouira. Maroc' , '+212 5 24 79 20 64' , ' este@uca.ac.ma ' , 'https://www.uca.ma/site/este' , 'este.png');
 
 INSERT INTO establishment (ID_ESTA,ABRE_ESTA,NOM_ESTA,ADRESSE_ESTA,TELE_ESTA,EMAIL_ESTA,LINK_ESTA,PHOTO_ESTA)
 VALUES(13 , 'CUKS' , 'Centre Universitaire, Kelâa des Sraghna' , 'Bureau de Poste -Centre Ville, BP 263, Avenue Mohammed V kelaa' , '+212 5 24 41 44 98' , ' contact@uca.ma ' , 'https://www.uca.ma/site/cuks' , 'cuks.png');
@@ -145,7 +145,7 @@ VALUES(13 , 'CUKS' , 'Centre Universitaire, Kelâa des Sraghna' , 'Bureau de Post
 INSERT INTO establishment (ID_ESTA,ABRE_ESTA,NOM_ESTA,ADRESSE_ESTA,TELE_ESTA,EMAIL_ESTA,LINK_ESTA,PHOTO_ESTA)
 VALUES(14 , 'FLAM' , 'Faculté de Langue Arabe de Marrakech' , 'Avenue Allal Fassi. B.P 1483 Marrakech' , '+212 524 303 647' , ' contact.flam@uca.ma' , 'https://www.uca.ma/site/flam' , 'flam.png');
 
-
+commit;
 /----------------------------   LA TABLE PROFESSEUR   --------------------------------/
 CREATE TABLE professeur (
     ID_PROF NUMBER NOT NULL PRIMARY KEY,
@@ -219,7 +219,8 @@ INSERT INTO professeur (ID_PROF, ID_ESTA, NOM_PROF, PRENOM_PROF, EMAIL_PROF)
 VALUES(20, 13, 'EHIABI', 'Abderrahmane', 'a.rhiabi@gmail.com');
 
 INSERT INTO professeur (ID_PROF, ID_ESTA, NOM_PROF, PRENOM_PROF, EMAIL_PROF)
-VALUES(21, 14, 'ARTIL', 'Mohammed', 'meskini.idriss@gmail.com');
+VALUES(21, 14, 'ARTIL', 'Mohammed', 'a.med@gmail.com');
+
 
 /----------------------------   LA TABLE FILIERE   --------------------------------/
 CREATE TABLE filiere (
@@ -248,7 +249,7 @@ INSERT INTO filiere(ID_FILIERE,ID_ESTA,ABRE_FILIERE,NOM_FILIERE)
 VALUES(5,12,'GODT','Gestion des Organisations et des Destinations Touristiques');
 
 INSERT INTO filiere(ID_FILIERE,ID_ESTA,ABRE_FILIERE,NOM_FILIERE)
-VALUES(6,12,'GE','Génie de l''Environnement');
+VALUES(6,12,'GE','Génie de l Environnement');
 
 INSERT INTO filiere(ID_FILIERE,ID_ESTA,ABRE_FILIERE,NOM_FILIERE)
 VALUES(7,1,'PH','PHYSIQUE'); 
@@ -266,7 +267,7 @@ INSERT INTO filiere(ID_FILIERE,ID_ESTA,ABRE_FILIERE,NOM_FILIERE)
 VALUES(11,5,'DR','DROIT');
 
 INSERT INTO filiere(ID_FILIERE,ID_ESTA,ABRE_FILIERE,NOM_FILIERE)
-VALUES(12,6,'MIP','Mathématiques et Informatique appliqués aux Sciences de l''Ingénieur');
+VALUES(12,6,'MIP','Mathématiques et Informatique appliqués aux Sciences de l Ingénieur');
 
 INSERT INTO filiere(ID_FILIERE,ID_ESTA,ABRE_FILIERE,NOM_FILIERE)
 VALUES(13,7,'GM','Génie Mécanique');
@@ -317,13 +318,13 @@ CREATE TABLE message (
     )
     
 INSERT INTO message (ID_MES, ID_SEN, TEXT_MES, DATE_MES)
-VALUES(1, 1, 'Hello admin, this is a test for new message from abdellah elaaroub. :) Enjoy besty..', '03-Jan-021');
+VALUES(1, 1, 'Hello admin, this is a test for new message from abdellah elaaroub. Enjoy besty..', '03-Jan-021');
 
 INSERT INTO message (ID_MES, ID_SEN, TEXT_MES, DATE_MES)
-VALUES(2, 2, 'Hello admin, this is a test for new message from walid damou. :) Enjoy besty..', '04-Jan-2021');
+VALUES(2, 2, 'Hello admin, this is a test for new message from walid damou. Enjoy besty..', '04-Jan-2021');
 
 INSERT INTO message (ID_MES, ID_SEN, TEXT_MES, DATE_MES)
-VALUES(3, 3, 'Hello admin, this is a test for new message from othmane atnan. :) Enjoy besty..', '05-Jan-2021');
+VALUES(3, 3, 'Hello admin, this is a test for new message from othmane atnan. Enjoy besty..', '05-Jan-2021');
 
 
 /----------------------------   LA TABLE ADMINISTRATEUR   --------------------------------/
@@ -341,25 +342,9 @@ VALUES(1, 'ELAAROUB', 'Abdellah','ELAAROUB_Abdellah','IDSD2', 'abdouelaaroub@gma
 
 INSERT INTO administrateur (ID_ADMIN, NOM_ADMIN, PRENOM_ADMIN, LOGIN_ADMIN, PASSWORD_ADMIN, EMAIL_ADMIN)
 VALUES(2, 'DAMOU', 'Walid','DAMOU_Walid','IDSD2', 'walid.damou.2015@gmail.com');
-/----------------------------   LA TABLE UNIVERSITY   --------------------------------/
-CREATE TABLE university (
-    ID_UNIV NUMBER NOT NULL PRIMARY KEY,
-    ABRE_UNIV VARCHAR2(6),
-    DATE_CREATION_UNIV DATE,
-    REGION_UNIV VARCHAR2(30),
-    DESCRIPTION_UNIV VARCHAR2(1024),
-    LINK_UNIV VARCHAR2(50),
-    PHOTO_UNIV VARCHAR2(30)
-    )
-/----------------------------  INSERTION DES DONNEES DANS LA TABLE UNIVERSITY   --------------------------------/
-INSERT INTO university (ID_UNIV, ABRE_UNIV, DATE_CREATION_UNIV, REGION_UNIV, DESCRIPTION_UNIV, LINK_UNIV, PHOTO_UNIV)
-VALUES(1, 'UCA', '29-May-1978', 'Marrakech Safi','L''UCA est une jeune université, créée en 1978, qui n''a cessé d''évoluer et de confirmer son positionnement au niveau national et international autant par l''évolution de son effectif d''étudiants que par la diversification de son offre de formation ou encore par la recherche et le rayonnement national et international.', 'https://www.uca.ma/','uca.png');
 
-
-UPDATE professeur 
-SET NOM_PROF='BOUSKIDdd',PRENOM_PROF='Mohammed',EMAIL_PROF='f.bouskid@gmail.com' 
-WHERE NOM_PROF='BOUSKID'AND PRENOM_PROF='Mohammed'AND EMAIL_PROF='f.bouskid@gmail.com'
-
+delete from professeur where ID_ESTA=14;
+DELETE FROM establishment WHERE ABRE_ESTA='FLAM' AND NOM_ESTA='Faculté de Langue Arabe de Marrakech' ;
 
 
 

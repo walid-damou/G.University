@@ -5,13 +5,14 @@
  */
 package Evenement;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.stmt;
-import static gestion_university.JDBC.rs;
+import Main.JDBC;
+import static Main.JDBC.stmt;
+import static Main.JDBC.rs;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.*;
 import java.util.Calendar;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -125,6 +126,7 @@ public class ajoutEvenement extends javax.swing.JFrame {
         getContentPane().add(jLabel11);
         jLabel11.setBounds(70, 210, 180, 30);
 
+        jButton2.setBackground(new java.awt.Color(189, 255, 207));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton2.setText("Ajouter");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +138,7 @@ public class ajoutEvenement extends javax.swing.JFrame {
         jButton2.setBounds(530, 420, 120, 40);
 
         descreptionEA.setColumns(20);
+        descreptionEA.setLineWrap(true);
         descreptionEA.setRows(5);
         jScrollPane1.setViewportView(descreptionEA);
 
@@ -157,6 +160,7 @@ public class ajoutEvenement extends javax.swing.JFrame {
         getContentPane().add(dateFEA);
         dateFEA.setBounds(260, 130, 330, 30);
 
+        jButton4.setBackground(new java.awt.Color(255, 204, 204));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("Exit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +204,10 @@ public class ajoutEvenement extends javax.swing.JFrame {
                 + "'"+dateDebut+"', '"+dateFin+"', '"+heurDebut+"', '"+heurFin+"', '"+descreptionEvenement+"', "
                     + "'"+imgEvenement+"')";
             stmt.executeUpdate(query);
-            System.out.println(query);
+            JOptionPane dialogue = new JOptionPane("Bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+            JDialog boîte = dialogue.createDialog("Message");
+            boîte.setVisible(true);
+            titreEA.setText("");heurDEA.setText("");heurFEA.setText("");imgEA.setText("");descreptionEA.setText("");
             }
             
         } catch (SQLException e) {

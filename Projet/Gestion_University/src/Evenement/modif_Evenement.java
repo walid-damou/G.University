@@ -5,9 +5,10 @@
  */
 package Evenement;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.*;
+import Main.JDBC;
+import static Main.JDBC.*;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -63,6 +64,7 @@ public class modif_Evenement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableEvM = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -71,8 +73,6 @@ public class modif_Evenement extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descrEvM = new javax.swing.JTextPane();
         titreEvM = new javax.swing.JTextField();
         dateD = new javax.swing.JTextField();
         dateF = new javax.swing.JTextField();
@@ -81,7 +81,11 @@ public class modif_Evenement extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        descrEvM = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/event.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -146,12 +150,6 @@ public class modif_Evenement extends javax.swing.JFrame {
         jLabel6.setText("Descreption d'évenement :");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(400, 60, 200, 30);
-
-        descrEvM.setToolTipText("");
-        jScrollPane2.setViewportView(descrEvM);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(400, 90, 360, 110);
         getContentPane().add(titreEvM);
         titreEvM.setBounds(510, 210, 250, 30);
         getContentPane().add(dateD);
@@ -192,9 +190,17 @@ public class modif_Evenement extends javax.swing.JFrame {
         getContentPane().add(jButton4);
         jButton4.setBounds(670, 410, 110, 40);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/event.png"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, 0, 800, 470);
+        descrEvM.setColumns(20);
+        descrEvM.setLineWrap(true);
+        descrEvM.setRows(5);
+        jScrollPane3.setViewportView(descrEvM);
+
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(400, 90, 360, 110);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/event.png"))); // NOI18N
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(0, 0, 800, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -268,8 +274,12 @@ public class modif_Evenement extends javax.swing.JFrame {
                                 + "DATE_J_F_EVE = TO_DATE('"+EvDateFin+"', 'YYYY-MM-DD'),"
                                         + "HEURE_D_EVE = '"+EvHeurDib+"', HEURE_F_EVE = '"+EvHeurFin+"', "
                                                 + "TEXT_EVE = '"+EvDescreption+"' WHERE ID_EVE = "+ID;
-                System.out.println(sq);
+                
                 stmt.executeUpdate(sq);
+                JOptionPane dialogue = new JOptionPane("Bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                titreEvM.setText("");heurD.setText("");heurF.setText("");dateD.setText("");dateF.setText("");
                 this.setVisible(false);
                 new modif_Evenement().setVisible(true);
                 
@@ -338,7 +348,7 @@ public class modif_Evenement extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField dateD;
     private javax.swing.JTextField dateF;
-    private javax.swing.JTextPane descrEvM;
+    private javax.swing.JTextArea descrEvM;
     private javax.swing.JTextField heurD;
     private javax.swing.JTextField heurF;
     private javax.swing.JButton jButton2;
@@ -351,8 +361,9 @@ public class modif_Evenement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tableEvM;
     private javax.swing.JTextField titreEvM;
     // End of variables declaration//GEN-END:variables

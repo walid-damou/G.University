@@ -5,11 +5,12 @@
  */
 package Etablissement;
 
-import gestion_university.JDBC;
-import static gestion_university.JDBC.conn;
-import static gestion_university.JDBC.rs;
-import static gestion_university.JDBC.stmt;
+import Main.JDBC;
+import static Main.JDBC.conn;
+import static Main.JDBC.rs;
+import static Main.JDBC.stmt;
 import java.sql.SQLException;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -80,20 +81,24 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
         ecrireeta = new javax.swing.JTextField();
         ecrireeta1 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 102));
         jLabel2.setText("EMAIL_PROF : ");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(340, 350, 120, 30);
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 102));
         jLabel3.setText("NOM_FILIERE : ");
         jLabel3.setPreferredSize(new java.awt.Dimension(90, 30));
         getContentPane().add(jLabel3);
         jLabel3.setBounds(340, 160, 120, 30);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 102));
         jLabel10.setText("Ajouter Professeur à l'établissement : ");
         getContentPane().add(jLabel10);
         jLabel10.setBounds(340, 220, 270, 30);
@@ -109,18 +114,22 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
         nom_ff.setBounds(440, 160, 170, 30);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 102));
         jLabel13.setText("Ajouter Filière à l'établissement : ");
         getContentPane().add(jLabel13);
         jLabel13.setBounds(340, 80, 240, 30);
 
+        jLabel14.setForeground(new java.awt.Color(255, 255, 102));
         jLabel14.setText("ABRE_FILIERE : ");
         getContentPane().add(jLabel14);
         jLabel14.setBounds(340, 120, 120, 30);
 
+        jLabel15.setForeground(new java.awt.Color(255, 255, 102));
         jLabel15.setText("NOM_PROF : ");
         getContentPane().add(jLabel15);
         jLabel15.setBounds(340, 270, 120, 30);
 
+        jLabel16.setForeground(new java.awt.Color(255, 255, 102));
         jLabel16.setText("PRENOM_PROF : ");
         getContentPane().add(jLabel16);
         jLabel16.setBounds(340, 310, 120, 30);
@@ -131,6 +140,7 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
         getContentPane().add(email_prof);
         email_prof.setBounds(440, 350, 170, 30);
 
+        jButton1.setBackground(new java.awt.Color(189, 255, 207));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton1.setText("Ajouter professeur");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +151,7 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(620, 290, 160, 50);
 
+        jButton2.setBackground(new java.awt.Color(189, 255, 207));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton2.setText("Ajouter la filière");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -185,6 +196,7 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
         jScrollPane1.setBounds(10, 80, 310, 350);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Ajouter Filière et Professeur");
         getContentPane().add(jLabel1);
@@ -203,6 +215,7 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
         getContentPane().add(ecrireeta1);
         ecrireeta1.setBounds(600, 220, 150, 30);
 
+        jButton4.setBackground(new java.awt.Color(255, 204, 204));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("Exit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +225,11 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4);
         jButton4.setBounds(670, 410, 110, 40);
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/background.jpg"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 800, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -245,6 +263,11 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
             if(abree.length()!=0 && nomm.length()!=0 ){
                 String q="INSERT INTO filiere VALUES ("+idf+","+ideta+",'"+abree+"','"+nomm+"')";
                 stmt.executeUpdate(q);
+                JOptionPane dialogue = new JOptionPane("La filière est bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                abr.setText("");
+                nom_ff.setText("");
             }
             
                 rs.close();
@@ -278,6 +301,12 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
             if(n.length()!=0 && p.length()!=0 && e.length()!=0 ){
                 String q="INSERT INTO professeur VALUES ("+idp+","+ideta+",'"+n+"','"+p+"','"+e+"')";
                 stmt.executeUpdate(q);
+                JOptionPane dialogue = new JOptionPane("Le Professeur est bien enregistré", JOptionPane.INFORMATION_MESSAGE);
+                JDialog boîte = dialogue.createDialog("Message");
+                boîte.setVisible(true);
+                nom_prof.setText("");
+                prenom_prof.setText("");
+                email_prof.setText("");
                 }
             
                 rs.close();
@@ -350,6 +379,7 @@ public class Ajouter_Filière_prof extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nom_ff;
     private javax.swing.JTextField nom_prof;
